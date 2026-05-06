@@ -51,13 +51,20 @@ These folders are mounted into the backend container so data survives restarts:
 
 ## Changing Printing Presets
 
-If you would like to change default presets for printers and filaments, edit:
+If you would like to change presets while the server is running:
+
+- Open the app and go to **Settings** (`/settings`)
+- Edit the JSON and press **Save**
+
+These changes are stored in `backend/metadata/config/` (volume-mounted), so they persist across container restarts.
+
+If you prefer editing files manually, the default config files live in:
 
 ```
-frontend/public/config/ -> config_xxxx.json
+backend/config/ -> config_*.json
 ```
 
-Rebuild the frontend image after changing presets:
+If you change defaults and want them baked into the image, rebuild:
 
 ```bash
 sudo docker-compose build frontend

@@ -13,4 +13,4 @@ COPY --from=build /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["sh", "-c", "echo '🌐 Frontend: http://localhost:4000' && echo '⚙️  Settings: http://localhost:4000/settings' && echo '🔌 API: http://localhost:3000' && nginx -g 'daemon off;'"]

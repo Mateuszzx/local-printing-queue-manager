@@ -11,7 +11,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
 // Static folders
-app.use('/config', express.static(path.join(__dirname, 'config')));
+// Config files are served via API to allow runtime overrides.
+app.use('/config', require('./routes/config'));
 app.use('/storage', express.static(path.join(__dirname, 'storage')));
 app.use('/metadata', express.static(path.join(__dirname, 'metadata')));
 
@@ -19,9 +20,12 @@ app.use('/metadata', express.static(path.join(__dirname, 'metadata')));
 app.use('/api/upload', require('./routes/upload'));
 app.use('/api/queue', require('./routes/queue'));
 app.use('/api/stats', require('./routes/stats'));
+app.use('/api/config', require('./routes/config'));
 
 app.use(express.static('public'));
 
 app.listen(PORT, () => {
-  console.log(`🚀 Backend running at http://localhost:${PORT}`);
+  console.log(`🚀 Backend running: http://localhost:${PORT}`);
+  console.log(`🌐 Frontend (via docker-compose): http://localhost:4000`);
+  console.log(`⚙️  Settings: http://localhost:4000/settings`);
 });

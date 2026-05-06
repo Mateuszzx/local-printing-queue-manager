@@ -20,6 +20,7 @@ export default function Header() {
         <div className="nav-links">
           <Link className={pathname === '/' ? 'active' : ''} to="/">Upload</Link>
           <Link className={pathname === '/dashboard' ? 'active' : ''} to="/dashboard">Dashboard</Link>
+          <Link className={pathname === '/settings' ? 'active' : ''} to="/settings">Settings</Link>
           <button className="theme-toggle" onClick={toggleTheme}>
             {theme === 'light' ? '🌙' : '☀️'}
           </button>
