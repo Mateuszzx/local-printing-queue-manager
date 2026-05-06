@@ -1,0 +1,12 @@
+node_modules
+metadata/
+storage/
+
+# Runtime data (docker volumes)
+backend/metadata/
+backend/storage/
+
+# Secrets / local overrides
+.env*
+!.env.example
+!backend/.env.example

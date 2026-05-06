@@ -1,0 +1,30 @@
+services:
+  backend:
+    image: stl-print-queue-backend
+    build: ./backend
+    restart: unless-stopped
+    env_file:
+      - path: ./backend/.env
+        required: false
+    volumes:
+      - ./backend/storage:/app/storage
+      - ./backend/metadata:/app/metadata
+    ports:
+      - "3000:3000"
+    networks:
+      - localnet
+
+  frontend:
+    image: stl-print-queue-frontend
+    build: ./frontend
+    ports:
+      - "4000:80"
+    depends_on:
+      - backend
+    networks:
+      - localnet
+    volumes:
+      - ./backend/storage:/usr/share/nginx/html/storage
+
+networks:
+  localnet:

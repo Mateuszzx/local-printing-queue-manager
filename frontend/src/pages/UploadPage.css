@@ -1,0 +1,41 @@
+.upload-page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+.upload-sidebar {
+  flex: 0 0 300px;
+  max-width: 300px;
+  min-width: 300px;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+
+.queue-section {
+  flex: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+/* 🌙 DARK THEME OVERRIDES */
+:root[data-theme='dark'] .upload-sidebar {
+  background-color: #1e1e1e;
+  color: #eee;
+  border-right: 1px solid #444;
+}
+
+:root[data-theme='dark'] .queue-section {
+  background-color: #121212;
+  color: #eee;
+}
+
+:root[data-theme='dark'] .upload-page {
+  background-color: #121212;
+}

@@ -1,0 +1,126 @@
+.job-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 0.75rem 0;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    color: #222;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* 🌙 Dark mode */
+  :root[data-theme='dark'] .job-card {
+    background-color: #1e1e1e;
+    border-color: #444;
+    color: #eee;
+  }
+  
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .status-badge {
+    padding: 0.25em 0.75em;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .status-queued { background: #ffe58f; color: #8a6d3b; }
+  .status-printing { background: #b3e5fc; color: #0277bd; }
+  .status-done { background: #c8e6c9; color: #388e3c; }
+  .status-cancelled, .status-failed { background: #ffcdd2; color: #c62828; }
+  .status-paused { background: #e0e0e0; color: #616161; }
+  
+  .job-info p {
+    margin: 0.25em 0;
+    font-size: 0.9rem;
+  }
+  
+  .job-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+  }
+  
+  .job-actions select {
+    padding: 0.3em 0.8em;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    background: white;
+    color: #222;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* 🌙 Dark mode dropdown */
+  :root[data-theme='dark'] .job-actions select {
+    background: #2a2a2a;
+    color: #eee;
+    border-color: #555;
+  }
+  
+  .job-buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .download-btn,
+  .delete-btn {
+    font-weight: 500;
+    padding: 0.3em 0.8em;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 6rem;
+    text-align: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* 🎨 Light mode */
+  .download-btn {
+    background: #95c2f0;
+    color: white;
+  }
+  
+  .download-btn:hover {
+    background: #95c2f0;
+  }
+  
+  .delete-btn {
+    background: #c62828;
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background: #b71c1c;
+  }
+  
+  /* 🌙 Dark mode buttons */
+  :root[data-theme='dark'] .download-btn {
+    background: #95c2f0;
+    color: white;
+  }
+  
+  :root[data-theme='dark'] .download-btn:hover {
+    background: #95c2f0;
+  }
+  
+  :root[data-theme='dark'] .delete-btn {
+    background: #b71c1c;
+    color: white;
+  }
+  
+  :root[data-theme='dark'] .delete-btn:hover {
+    background: #7f0000;
+  }
+  
